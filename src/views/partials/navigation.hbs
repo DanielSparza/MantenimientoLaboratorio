@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> {{!--navbar-dark bg-dark --}}
+  <div class="container">
+    {{#if user}}
+    <div class="icon_menu"> 
+          <i class="fa-solid fa-arrow-right-arrow-left" id="btn_menu"></i>
+    </div>
+    {{/if}}
+    <a class="navbar-brand" href="/">Control de Mantenimientos</a>
+    {{#if user}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {{/if}}
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        <li>
+          <a class="nav-link" id="etiqueta_usuario">Usuario: {{user.usuario}}</a>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="nav-link">Cerrar sesión</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+ 

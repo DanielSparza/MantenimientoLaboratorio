@@ -1,0 +1,244 @@
+body{
+    background: #f5f6f5;
+    font-family: 'PT Sans', sans-serif;
+    /* overflow: hidden; */ /*Esconde la barra de scroll lateral*/
+    margin-left: 60px; /*Margen para que se ponga al lado de la barra de menu lateral*/
+    transition: margin-left 500ms cubic-bezier(0.0785, 0.135, 0.15, 0.86);
+    margin-top: 80px;
+}
+
+.navbar{
+    z-index: 200;
+}
+
+#etiqueta_usuario{
+    color: #fff;
+    cursor: default;
+}
+
+.index{
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.img_default{
+    align-items: center;
+    text-align: center;
+}
+
+.img_default img{
+    opacity: 15%;
+    filter: grayscale(100%);
+}
+
+.masthead{
+    color: #585858;
+    min-height: 30rem;
+    padding-top: 8rem;
+    /* background: url("/img/computerbkg.jpg"); */
+    opacity: 100%;
+    /* filter: grayscale(100%); */
+    /* background-position: center center;
+    background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
+
+.masthead h1{
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 3px 4px #000;
+}
+
+.masthead h3{
+    text-shadow: 2px 2px 4px #000;
+}
+
+.masthead a{
+    box-shadow: 1px 3px 20px -3px #000;
+    background-color: #3e4760;
+    color: #f5f5f5;
+}
+
+.masthead a:hover{
+    background-color: #3e4760;
+    color: #f5f5f5;
+    opacity: 80%;
+}
+
+@media (min-width: 992px) {
+    .masthead h1 {
+        font-size: 5.5rem;
+    }
+}
+
+.icon_menu{
+    color: #fff;
+}
+
+.menu_side{
+    text-decoration: none;
+}
+
+.menu_side a:hover{
+    text-decoration: none;
+}
+
+.icon_menu{
+    width: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.icon_menu i{
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+}
+
+.menu_side{
+    width: 60px;
+    height: 100%;
+    position: fixed;
+    background: #3e4760;
+    top: 0;
+    left: 0;
+    color: #f5f5f5;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: all 500ms cubic-bezier(0.0785, 0.135, 0.15, 0.86);
+    border-right: 10px solid #3e4760;
+}
+
+/*OCULTAR SCROLL DEL MENU LATERAL EN CHROME, SAFARI Y OPERA*/
+.menu_side::-webkit-scrollbar{
+    display: none;
+}
+
+/*OCULTAR SCROLL DEL MENU LATERAL EN EXPLORER, EDGE Y FIREFOX*/
+.menu_side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.menu_options{
+    padding: 20px 20px;
+    position: absolute;
+    top: 100px;
+}
+
+.menu_options a{
+    color: #ffffffb2;
+    display: block;
+    position: relative;
+    transition: color 500ms;
+    cursor: default;
+}
+
+.menu_options a:hover{
+    color: #ffff;
+}
+
+.menu_options .option{
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+}
+
+.menu_options .option h5{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu_options .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #ffff;
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 60%;
+    background: #ffff;
+    position: absolute;
+    top: 10%;
+    left: -20px;
+}
+
+/*CLASES PARA OCULTAR Y MOSTRAR EL MENU LATERAL CON JAVASCRIPT*/
+.body_move{
+    margin-left: 200px;
+}
+
+.menu_side_move{
+    width: 200px;
+}
+/*-----------------------------------------------------------*/
+
+@media screen and (max-width: 760px) {
+    .body_move{
+        margin-left: 0px;
+    }
+    .menu_side_move{
+        width: 80px;
+        left: -80px;
+    }
+}
+
+.filter_options button{
+    background-color: #3e4760;
+    color: #f5f5f5;
+}
+
+.thead-style{
+    background-color: #3e4760;
+    opacity: 70%;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.row-action{
+    display: flex;
+}
+
+.tabla{
+    height: 420px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.tabla .btn-editar{
+    background-color: #28c3f3;
+    color: #f5f5f5;
+}
+
+.tabla .btn-eliminar{
+    background-color: #f32828;
+    color: #f5f5f5;
+}
+
+.table-body{
+    align-items: center;
+    text-align: center;
+}
+
+.action-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-confirm-button{
+    background-color: #3e4760;
+    color: #f5f5f5;
+}
+
+.modal-confirm-button:hover{
+    background-color: #3e4760;
+    color: #f5f5f5;
+    opacity: 80%;
+}

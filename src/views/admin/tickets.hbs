@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="filter_options">
+        <div class="row">
+            <div class="col-12 col-lg-10 col-md-10 col-sm-12">
+                <form action="/maintenance/ticketsfilter" method="post">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Buscar por nombre"
+                                    aria-describedby="button-addon2" name="nombre">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h5 class="text-center">TICKETS</h5>
+</div>
+
+<div class="container">
+    <div class="tabla">
+        <table class="table table-hover">
+            <thead class="thead-style">
+                <tr>
+                    <th>ID</th>
+                    <th>Computadora</th>
+                    <th>Usuario</th>
+                    <th>Fecha</th>
+                    <th>Problema</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {{#each ticket}}
+                <tr>
+                    <td>{{id_ticket}}</td>
+                    <td>{{fk_numserie}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{fecha}}</td>
+                    <td>{{problema}}</td>
+                    <td class="action-buttons">
+                        <button class="btn btn-editar mr-2" data-toggle="modal" data-target="#ticket-confirm-modal{{id_ticket}}">
+                            <i class="fa-solid fa-square-check"></i></button>
+
+                        <button class="btn btn-eliminar mr-2" data-toggle="modal" data-target="#ticket-reject-modal{{id_ticket}}">
+                            <i class="fa-solid fa-square-xmark"></i></button>
+
+                        <button class="btn modal-confirm-button" data-toggle="modal" data-target="#">
+                            <i class="fa-solid fa-file-pdf"></i></button>
+                    </td>
+                </tr>
+                {{> modals/ticketconfirm }}
+                {{> modals/ticketreject }}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

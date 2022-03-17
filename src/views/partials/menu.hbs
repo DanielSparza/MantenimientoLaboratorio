@@ -1,0 +1,51 @@
+<div class="menu_side" id="menu_side">   
+    <div class="menu_options">
+        {{#xif user.fk_rol "1"}}
+        <a href="/maintenance/users" >
+            <div class="option">
+                <i class="fa-solid fa-user" title="Usuarios"></i>
+                <h5>USUARIOS</h5>
+            </div>
+        </a>
+        <a href="/maintenance/laboratories" >
+            <div class="option">
+                <i class="fa-solid fa-display" title="Laboratorios"></i>
+                <h5>LABORATORIOS</h5>
+            </div>
+        </a>
+        <a href="/maintenance/computers" >
+            <div class="option">
+                <i class="fa-solid fa-computer" title="Computadoras"></i>
+                <h5>COMPUTADORAS</h5>
+            </div>
+        </a>
+        <a href="/maintenance/tickets" >
+            <div class="option">
+                <i class="fa-solid fa-file-lines" title="Tickets"></i>
+                <h5>TICKETS</h5>
+            </div>
+        </a>
+        <a href="/maintenance/maintenance" >
+            <div class="option">
+                <i class="fa-solid fa-screwdriver-wrench" title="Mantenimientos"></i>
+                <h5>MANTENIMIENTOS</h5>
+            </div>
+        </a>
+        {{/xif}}
+
+        {{#xif user.fk_rol "2"}}
+        <a href="/maintenance/ticketsuser" >
+            <div class="option">
+                <i class="fa-solid fa-file-lines" title="Tickets"></i>
+                <h5>TICKETS</h5>
+            </div>
+        </a>
+        <a href="/maintenance/maintenanceuser" class="selected">
+            <div class="option">
+                <i class="fa-solid fa-screwdriver-wrench" title="Mantenimientos"></i>
+                <h5>MANTENIMIENTOS</h5>
+            </div>
+        </a>
+        {{/xif}}
+    </div>
+</div>

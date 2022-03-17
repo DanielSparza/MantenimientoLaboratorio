@@ -1,0 +1,57 @@
+{{!-- MODAL PARA EDITAR UNA COMPUTADORA--}}
+<div class="modal fade" id="pcs-edit-modal{{numserie}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar computadora:  {{numserie}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/maintenance/pcsedit/{{numserie}}" method="post">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Marca</label>
+                        <input type="text" class="form-control" id="recipient-name" name="marca" value="{{marca}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Monitor</label>
+                        <input type="text" class="form-control" id="recipient-name" name="monitor" value="{{monitor}}">
+                    </div>
+                     <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Memoria</label>
+                        <input type="text" class="form-control" id="recipient-name" name="memoria" value="{{memoria}}">
+                    </div>
+                     <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Procesador</label>
+                        <input type="text" class="form-control" id="recipient-name" name="procesador" value="{{procesador}}">
+                    </div>
+                     <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Tipo de conexión</label>
+                        <input type="text" class="form-control" id="recipient-name" name="tipoconexion" value="{{tipoconexion}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Laboratorio</label>
+                        <select class="custom-select" id="inputGroupSelect02" name="fk_laboratorio">
+                            {{#each labs}}
+                            <option value="{{id_laboratorio}}">{{descripcion}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Estatus</label>
+                        <select class="custom-select" id="inputGroupSelect02" name="estatus">
+                            <option value="1">Funcionando</option>
+                            <option value="2">En reparación</option>
+                            <option value="3">Baja</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button  class="btn modal-confirm-button">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

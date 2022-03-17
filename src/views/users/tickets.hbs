@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="filter_options">
+        <div class="row">
+            <div class="col-0 col-lg-10 col-md-10 col-sm-0">
+
+            </div>
+            <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                <button class="btn btn-outline-secondary mb-4" data-toggle="modal"
+                    data-target="#tickets-add-modal">Nuevo ticket</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h5 class="text-center">MIS TICKETS</h5>
+</div>
+
+<div class="container">
+    <div class="tabla">
+        <table class="table table-hover">
+            <thead class="thead-style">
+                <tr>
+                    <th>ID</th>
+                    <th>Computadora</th>
+                    <th>Fecha</th>
+                    <th>Problema</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {{#each ticket}}
+                <tr>
+                    <td>{{id_ticket}}</td>
+                    <td>{{fk_numserie}}</td>
+                    <td>{{fecha}}</td>
+                    <td>{{problema}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{> modals/ticketsadd}}

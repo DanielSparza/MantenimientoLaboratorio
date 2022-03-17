@@ -1,0 +1,36 @@
+{
+  "name": "mantenimientolaboratorio",
+  "version": "1.0.0",
+  "description": "Aplicación web para gestionar el mantenimiento de equipos de computo desarrollado con NodeJS y MySQL",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielSparza/MantenimientoLaboratorio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielSparza/MantenimientoLaboratorio/issues"
+  },
+  "homepage": "https://github.com/DanielSparza/MantenimientoLaboratorio#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "express-mysql-session": "^2.1.7",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

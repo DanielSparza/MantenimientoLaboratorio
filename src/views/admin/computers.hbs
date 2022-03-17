@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="filter_options">
+        <div class="row">
+            <div class="col-12 col-lg-10 col-md-10 col-sm-12">
+                <form action="/maintenance/pcsfilter" method="post">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Laboratorio</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01" name="filtro">
+                                    <option value="">Todos</option>
+                                    {{#each labs}}
+                                    <option value="{{id_laboratorio}}">{{descripcion}}</option>
+                                    {{/each}}
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn modal-confirm-button">Aplicar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                <button class="btn btn-outline-secondary mb-4" data-toggle="modal" data-target="#pcs-add-modal">Agregar
+                    computadora</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h5 class="text-center">COMPUTADORAS</h5>
+</div>
+
+<div class="container">
+    <div class="tabla">
+        <table class="table table-hover">
+            <thead class="thead-style">
+                <tr>
+                    <th>No. Serie</th>
+                    <th>Marca</th>
+                    <th>Monitor</th>
+                    <th>Memoria</th>
+                    <th>Procesador</th>
+                    <th>Conexión</th>
+                    <th>Laboratorio</th>
+                    <th>Estatus</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {{#each pcs}}
+                <tr>
+                    <td>{{numserie}}</td>
+                    <td>{{marca}}</td>
+                    <td>{{monitor}}</td>
+                    <td>{{memoria}}</td>
+                    <td>{{procesador}}</td>
+                    <td>{{tipoconexion}}</td>
+                    <td>{{descripcion}}</td>
+                    <td>{{estatus}}</td>
+                    <td class="action-buttons">
+                        <button class="btn btn-editar mr-3" data-toggle="modal"
+                            data-target="#pcs-edit-modal{{numserie}}"><i
+                                class="fa-solid fa-pen-to-square"></i></button>
+
+                        <button class="btn btn-eliminar" data-toggle="modal"
+                            data-target="#pcs-delete-modal{{numserie}}"><i
+                                class="fa-solid fa-trash-can"></i></button>
+                    </td>
+                </tr>
+                {{> modals/pcsedit }}
+                {{> modals/pcsdelete }}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{> modals/pcsadd }}

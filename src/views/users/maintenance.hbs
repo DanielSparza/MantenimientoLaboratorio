@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="filter_options">
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                <form action="/maintenance/maintenanceuserfilter" method="post">
+                    <div class="row">
+                        <div class="col-12 col-lg-5 col-md-5 col-sm-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01" name="tipo">
+                                    <option value="">Todos</option>
+                                    <option value="inicial">Inicial</option>
+                                    <option value="preventivo">Preventivo</option>
+                                    <option value="correctivo">Correctivo</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 col-md-5 col-sm-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Estatus</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01" name="estatus">
+                                    <option value="">Todos</option>
+                                    <option value="autorizado">Autorizado</option>
+                                    <option value="en proceso">En proceso</option>
+                                    <option value="concluido">Concluido</option>
+                                    <option value="no autorizado">No autorizado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                            <div class="input-group-append">
+                                <button class="btn modal-confirm-button">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h5 class="text-center">MIS MANTENIMIENTOS</h5>
+</div>
+
+<div class="container">
+    <div class="tabla">
+        <table class="table table-hover">
+            <thead class="thead-style">
+                <tr>
+                    <th>ID</th>
+                    <th>Ticket</th>
+                    <th>Tipo</th>
+                    <th>Responsable</th>
+                    <th>Estatus</th>
+                    <th>Observaciones</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {{#each mainte}}
+                <tr>
+                    <td>{{id_mantenimiento}}</td>
+                    <td>{{fk_ticket}}</td>
+                    <td>{{tipo}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{estatus}}</td>
+                    <td>{{observaciones}}</td>
+                    <td class="action-buttons">
+                        <a href="/maintenance/maintenanceuserbegin/{{id_mantenimiento}}" class="btn btn-editar mr-2">
+                            <i class="fa-solid fa-square-check"></i>
+                        </a>
+
+                        <button class="btn btn btn-eliminar" data-toggle="modal"
+                            data-target="#maintenanceuser-edit-modal{{id_mantenimiento}}">
+                            <i class="fa-solid fa-square-xmark"></i>
+                        </button>
+                    </td>
+                </tr>
+                {{> modals/maintenanceend}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
